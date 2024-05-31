@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Delete</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete {{ candidate.first_name }} {{ candidate.last_name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'candidate_detail' candidate.id %}">Cancel</a>
+</body>
+</html>

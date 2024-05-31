@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Form</title>
+</head>
+<body>
+    <h1>Candidate Form</h1>
+    {% csrf_token %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" required><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="phone_number" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="matric_number">Matric Number:</label>
+        <input type="text" name="matric_number" required><br>
+
+        <label for="cgpa">CGPA:</label>
+        <input type="text" name="cgpa" required><br>
+
+        <label for="resume">Resume:</label>
+        <input type="file" name="resume" required><br>
+
+        <label for="result">Result:</label>
+        <input type="file" name="result" required><br>
+
+        <label for="essay1">Essay 1:</label>
+        <input type="file" name="essay1" required><br>
+
+        <label for="essay2">Essay 2:</label>
+        <input type="file" name="essay2" required><br>
+
+        <label for="essay3">Essay 3:</label>
+        <input type="file" name="essay3" required><br>
+
+        <input type="submit" value="Save">
+    </form>
+    <a href="{% url 'candidate_list' %}">Back to List</a>
+</body>
+</html>

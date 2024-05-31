@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate List</title>
+</head>
+<body>
+    <h1>Candidate List</h1>
+    <ul>
+        {% for candidate in candidates %}
+            <li>
+                <a href="{% url 'candidate_detail' candidate.id %}">{{ candidate.first_name }} {{ candidate.last_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'candidate_create' %}">Add New Candidate</a>
+</body>
+</html>

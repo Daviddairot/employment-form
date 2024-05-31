@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candidate Detail</title>
+</head>
+<body>
+    <h1>{{ candidate.first_name }} {{ candidate.last_name }}</h1>
+    <p>Phone: {{ candidate.phone_number }}</p>
+    <p>Email: {{ candidate.email }}</p>
+    <p>Matric Number: {{ candidate.matric_number }}</p>
+    <p>CGPA: {{ candidate.cgpa }}</p>
+    <a href="{{ candidate.resume.url }}">Resume</a>
+    <a href="{{ candidate.result.url }}">Result</a>
+    <a href="{{ candidate.essay1.url }}">Essay 1</a>
+    <a href="{{ candidate.essay2.url }}">Essay 2</a>
+    <a href="{{ candidate.essay3.url }}">Essay 3</a>
+    <a href="{% url 'candidate_update' candidate.id %}">Edit</a>
+    <form action="{% url 'candidate_delete' candidate.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'candidate_list' %}">Back to List</a>
+</body>
+</html>
